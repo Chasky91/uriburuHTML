@@ -1,0 +1,391 @@
+---
+title: Inicio
+order: 1
+layout: default
+---
+
+<div id="masterslider" class="master-slider ms-skin-default">
+    <!-- first slide -->
+    <div class="ms-slide">
+        <!-- slide background -->
+        <!--<img src="img/slidervideo-bg.jpg" data-src="img/slider/video-bg.jpg" alt="Video slider"/>-->
+
+        <video data-autopause="false" data-mute="false" data-loop="true" data-fill-mode="fill" class="ms-slide-bgvideo"
+               style="left: 0; top:0;">
+            <source src="img/uriburu.mp4" type="video/mp4">
+            <source src="img/uriburu01.mp4" type="video/mp4">
+            <source src="img/uriburu02.mp4" type="video/mp4">
+                
+        </video>
+
+        <h2 class="ms-layer pi-caption01"  
+            style="left: 58px; top: 420px;" 
+            data-type="text" 
+            data-effect="top(short)" 
+            data-duration="300"
+            data-hide-effect="fade" 
+            data-delay="0" 
+            >
+            LOREM IPSUM LOREM IPSUM
+        </h2>
+
+        <img class="ms-layer" src="masterslider/blank.gif" data-src="img/slider/slider-line.jpg" alt=""
+             style="left: 540px; top: 480px;"
+             data-type="image" 
+             data-effect="bottom(short)" 
+             data-duration="300"
+             data-hide-effect="fade" 
+             data-delay="0" 
+             />
+
+        <p class="ms-layer pi-text"
+           style="left: 395px; top: 500px;"
+           data-type="text" 
+           data-effect="top(short)" 
+           data-duration="300"
+           data-hide-effect="fade" 
+           data-delay="500"      
+           >
+            Lorem ipsum lorem ipsum
+        </p>
+    </div><!-- .ms-slide end -->
+
+    <!-- slide start -->
+    <div class="ms-slide">
+        <!-- slide background -->
+        <img src="masterslider/blank.gif" data-src="img/slider/slide03.jpg" alt="Worldwide freight services"/> 
+
+        <h2 class="ms-layer pi-caption01" 
+            style="left: 258px; top: 420px;" 
+            data-type="text" 
+            data-effect="top(short)" 
+            data-duration="300"
+            data-hide-effect="fade" 
+            data-delay="0" 
+            >
+            Freight services
+        </h2>
+
+        <img class="ms-layer" src="masterslider/blank.gif" data-src="img/slider/slider-line.jpg" alt=""
+             style="left: 540px; top: 480px;"
+             data-type="image" 
+             data-effect="bottom(short)" 
+             data-duration="300"
+             data-hide-effect="fade" 
+             data-delay="100" 
+             />
+
+        <p class="ms-layer pi-text"
+           style="left: 278px; top: 500px;"
+           data-type="text" 
+           data-effect="top(short)" 
+           data-duration="300"
+           data-hide-effect="fade" 
+           data-delay="300"      
+           >
+            Road, air, train or overseas. We got it covered!
+        </p>
+    </div><!-- .ms-slide end -->
+</div><!-- #masterslider end -->
+
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 clearfix">
+                <ul class="tabs">
+                    <li class="active">
+                        <a href="#tab1">Acerca de nosotros</a>
+                    </li><!-- .active end -->
+
+                    <li>
+                        <a href="#tab2">Información de contacto</a>
+                    </li>
+
+                    <li>
+                        <a href="#tab3">Nuestra ubicación</a>
+                    </li>
+                </ul><!-- .tabs end -->
+
+                <div class="tab-content-wrap">
+                    <div id="tab1" class="tab-content">
+                        <img src="img/pics/illustration01.jpg" alt="" class="float-left"/>
+
+                        <br />
+
+                        <p class="text-big">
+                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33    
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                                   
+                        </p>
+
+                        <a class="read-more" href="{% link nosotros.html %}">
+                            <span>
+                                Leer mas
+                                <i class="fa fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div><!-- #tab1.tab-content end -->
+
+                    <div id="tab2" class="tab-content">
+                        <img src="img/pics/illustration02.jpg" alt="" class="float-right"/>
+
+                        <br />
+
+                        <p class="text-big">
+                            Where does it come from?
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
+
+                        <a class="read-more" href="{% link contacto.html %}">
+                            <span>
+                                contacto
+                                <i class="fa fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div><!-- #tab2.tab-content end -->
+
+                    <div id="tab3" class="tab-content">
+                        <img src="img/pics/locations.jpg" alt="" class="float-left"/>
+
+                        <br />
+
+                        <p class="text-big">
+                            Where can I get some?
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+                        </p>
+
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
+
+                        <a class="read-more" href="{% link ubicacion.html %}">
+                            <span>
+                                Nuestra ubicación
+                                <i class="fa fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div><!-- #tab3.tab-content end -->
+                </div><!-- .tab-content-wrap end -->
+            </div><!-- .col-md-8 end -->
+
+            <div class="col-md-4 clearfix">
+                <div class="custom-heading">
+                    <h2>Nuestros trabajos</h2>
+                </div><!-- .custom-heading end -->
+
+                <ul class="pi-latest-posts">
+                    <li>
+                        <div class="post-media">
+                            <img src="img/blog/latest01.jpg" alt=""/>
+                        </div><!-- .post-media end -->
+
+                        <div class="post-details">
+                            <div class="post-date">
+                                <p>
+                                    <i class="fa fa-calendar"></i>
+                                    MAY 15, 2015
+                                </p>
+                            </div>
+
+                            <a>
+                                <h4>
+                                    Lorm ipsum 2014
+                                </h4>
+                            </a>
+
+  
+                        </div><!-- .post-details end -->
+                    </li>
+
+                    <li>
+                        <div class="post-media">
+                            <img src="img/blog/latest02.jpg" alt=""/>
+                        </div><!-- .post-media end -->
+
+                        <div class="post-details">
+                            <div class="post-date">
+                                <p>
+                                    <i class="fa fa-calendar"></i>
+                                    MAY 15, 2015
+                                </p>
+                            </div>
+
+                            <a>
+                                <h4>
+                                    Lorm ipsum  2015
+                                </h4>
+                            </a>
+
+                        </div><!-- .post-details end -->
+                    </li>
+
+                    <li>
+                        <div class="post-media">
+                            <img src="img/blog/latest03.jpg" alt=""/>
+                        </div><!-- .post-media end -->
+
+                        <div class="post-details">
+                            <div class="post-date">
+                                <p>
+                                    <i class="fa fa-calendar"></i>
+                                    MAY 12, 2015
+                                </p>
+                            </div>
+
+                            <a>
+                                <h4>
+                                    Lorm ipsum !
+                                </h4>
+                            </a>
+
+                        </div><!-- .post-details end -->
+                    </li>
+                </ul><!-- .pi-latest-posts end -->
+            </div><!-- .col-md-4 end -->
+        </div><!-- .row end -->                
+    </div><!-- .container end -->
+</div><!-- .page-content end -->      
+
+<div class="page-content parallax parallax01 dark mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="custom-heading02">
+                <h2>Nuestros servicios</h2>
+                <p>
+                    The standard Lorem Ipsum passage, used since the 1500s
+                </p>
+            </div><!-- .custom-heading02 end -->
+        </div><!-- .row end -->
+
+        <div class="row mb-30">
+            <div class="col-md-6">
+                <div class="service-icon-left">
+                    <div class="icon-container triggerAnimation animated" data-animate="zoomIn">
+                        <img src="img/svg/pi-checklist-2.svg" alt="checklist icon">
+                    </div><!-- .icon-container end -->
+
+                    <div class="service-details">
+                        <h3>Lorem Ipsum</h3>
+
+                        <p>
+                            Need custom logistic service? We got it 
+                            covered. From overland, air, rail and sea 
+                            transportation. Fast, safe and accurate 
+                            shipment provided all over the globe.
+                        </p>
+                    </div><!-- .service-details end -->
+                </div><!-- .service-icon-left end -->
+            </div><!-- .col-md-6 end -->
+
+            <div class="col-md-6">
+                <div class="service-icon-left">
+                    <div class="icon-container triggerAnimation animated" data-animate="zoomIn">
+                        <img src="img/svg/pi-globe-5.svg" alt="globe icon">
+                    </div><!-- .icon-container end -->
+
+                    <div class="service-details">
+                        <h3>Lorem ipsum</h3>
+
+                        <p>
+                            trucking company offers the best logistics 
+                            services using all mens of supply chain.
+                            Use our overland, ocean and air freight
+                            solutions for shipment of your goods.
+                        </p>
+                    </div><!-- .service-details end -->
+                </div><!-- .service-icon-left end -->
+            </div><!-- .col-md-6 end -->
+        </div><!-- .row.mb-30 end -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="service-icon-left">
+                    <div class="icon-container triggerAnimation animated" data-animate="zoomIn">
+                        <img src="img/svg/pi-forklift-truck-5.svg" alt="forklift truck icon">
+                    </div><!-- .icon-container end -->
+
+                    <div class="service-details">
+                        <h3>Lorem ipsum</h3>
+
+                        <p>
+                            Trucking offers intelligent warehouse 
+                            solution. Lower your storage and good 
+                            maintenance by using our modern and 
+                            intelligent warehouses. You can see all 
+                            locations on location page.
+                        </p>
+                    </div><!-- .service-details end -->
+                </div><!-- .service-icon-left end -->
+            </div><!-- .col-md-6 end -->
+
+            <div class="col-md-6">
+                <div class="service-icon-left">
+                    <div class="icon-container triggerAnimation animated" data-animate="zoomIn">
+                        <img src="img/svg/pi-touch-desktop.svg" alt="touch icon">
+                    </div><!-- .icon-container end -->
+
+                    <div class="service-details">
+                        <h3>Lorem ipsum</h3>
+
+                        <p>
+                            Don't know what mean of transportation 
+                            would be right for you, or you need someone
+                            for full supply chain management? Please 
+                            contact us. Our team of professionals will 
+                            be happy to help.
+                        </p>
+                    </div><!-- .service-details end -->
+                </div><!-- .service-icon-left end -->
+            </div><!-- .col-md-6 end -->
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</div><!-- .page-content.parallax end -->
+
+<div class="page-content">
+   <!-- .contaienr end -->
+</div><!-- .page-content end -->
+
+
+<div class="page-content custom-bkg bkg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="custom-heading02 simple">
+                    <h2>Clientes</h2>
+                </div>
+            </div><!-- .col-md-12 end -->
+        </div><!-- .row end -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="carousel-container">
+                    <div id="client-carousel" class="owl-carousel owl-carousel-navigation">
+                        <div class="owl-item"><img src="img/pics/client01.png" alt=""/></div>
+                        <div class="owl-item"><img src="img/pics/client02.png" alt=""/></div>
+                        <div class="owl-item"><img src="img/pics/client03.png" alt=""/></div>
+                        <div class="owl-item"><img src="img/pics/client04.png" alt=""/></div>
+                        <div class="owl-item"><img src="img/pics/client05.png" alt=""/></div>
+                        <div class="owl-item"><img src="img/pics/client06.png" alt=""/></div>
+                    </div><!-- .owl-carousel.owl-carousel-navigation end -->
+                </div><!-- .carousel-container end -->
+            </div><!-- .col-md-12 end -->
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</div><!-- .page-content end -->
