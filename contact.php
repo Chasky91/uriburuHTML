@@ -8,104 +8,50 @@
  */
 
 // please change this to your E-Mail address
-$sendTo = "support@pixel-industry.com";
+$sendTo = "david_c91@oulook.com";
+ 
+//$action = $_POST['tipo_de_consulta'];
+//$action = $_POST['tipo_de_consulta'];
+if (isset($_POST['tipo_de_consulta'])) {
+    $tipoDeConsulta = $_POST['tipo_de_consulta'];
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $email = $_POST['correo'];   
+    $mensaje = $_POST['mensaje'];
+    $asunto = "Asunto: consulta por " . $tipoDeConsulta;
 
-$action = $_POST['action'];
-if ($action == 'contact') {
-    $inquiry = $_POST['form_data'][0]['inquiry'];
-    $name = $_POST['form_data'][0]['name'];
-    $lastname = $_POST['form_data'][0]['last_name'];
-    $email = $_POST['form_data'][0]['email'];   
-    $contact_message = $_POST['form_data'][0]['message'];
-
-    if ($name == "" || $email == "" || $contact_message == "") {
-        echo "There was problem while sending E-Mail. Please verify entered data and try again!";
+    if ($nombre == "" || $email == "" || $mensaje == "") {
+        echo "Oh no, ha ocurrido un error, prueba enviar tu emsaje de nuevo";
         exit();
     }
     
-    $message = 'Inquiry: ' . $inquiry . "\r\n"
-                        . "Name: " . $name . "\r\n"
-                        . "Last Name: " . $lastname . "\r\n"
+    $message = 'pregunta: ' . $tipoDeConsulta . "\r\n"
+                        . "Nombre: " . $nombre . "\r\n"
+                        . "Apellido: " . $apellido . "\r\n"
                         . "Email: " . $email . "\r\n"
-                        . "Subject: " . $subject . "\r\n"
-                        . "Message: " . $contact_message . "\r\n";
-} else if ($action == 'newsletter') {
+                        . $asunto . "\r\n"
+                        . "Mensaje: " . $mensaje . "\r\n";
+} else {
+    
     $email = $_POST['form_data'][0]['Email'];
-    $name = $email;
+    $nombre = $email;
 
     if ($email == "") {
-        echo "There was problem while sending E-Mail. Please verify entered data and try again!";
+        echo "Oh no, ha ocurrido un error, prueba enviar tu email de nuevo!";
         exit();
     }
-    $subject = 'Newsletter Subscribe!';
-    $message = 'Newsletter Subscribe for User: ' . $email;
-} else if ($action == 'comment') {
-    $name = $_POST['form_data'][0]['Name'];
-    $email = $_POST['form_data'][0]['Email'];
-    $message = $_POST['form_data'][0]['Message'];
-    // you can change default Subject for comment form here
-    $subject = 'New comment!';
-    
-    if ($name == "" || $email == "" || $message == "") {
-        echo "There was problem while sending E-Mail. Please verify entered data and try again!";
-        exit();
-    }
-    
-    $message = "Name: " . $name . "\r\n"
-                . "Email: " . $email . "\r\n"
-                . "Message: " . $message . "\r\n";
-}else if ($action == 'driverApp'){
-    $driver_name = $_POST['form_data'][0]['driver_name'];
-    $driver_last_name = $_POST['form_data'][0]['driver_last_name'];
-    $driver_birth_date = $_POST['form_data'][0]['date_of_birth'];
-    $driver_type = $_POST['form_data'][0]['driver_type'];
-    $licence_period = $_POST['form_data'][0]['licence_period'];
-    $licence_type = $_POST['form_data'][0]['licence_type'];
-    $phone_number = $_POST['form_data'][0]['phone_number'];
-    $cell_number = $_POST['form_data'][0]['cell_number'];
-    $driver_experience = $_POST['form_data'][0]['driver_experience'];
+    $asunto = 'subscripción';
+    $mensaje = 'Nueva subscripción para : ' . $email;
+} 
 
-    if ($driver_name == "" || $driver_last_name == "" || $driver_experience == "") {
-        echo "There was problem while sending E-Mail. Please verify entered data and try again!";
-        exit();
-    }
-    
-    $message = "Driver name: " . $driver_name . "\r\n"
-            . "Driver last name: " . $driver_last_name . "\r\n"
-            . "Date of birth: " . $driver_birth_date . "\r\n"
-            . "You are: " . $driver_type . "\r\n"
-            . "Licence period: " . $licence_period . "\r\n"
-            . "licence_type: " . $licence_type . "\r\n"
-            . "Phone number: " . $phone_number . "\r\n"
-            . "Cell number: " . $cell_number . "\r\n"
-            . "Driver experience: " . $driver_experience . "\r\n"; 
-}
-else if ($action == 'shipping') {
-    $tracking_origin = $_POST['form_data'][0]['origin_zip'];
-    $tracking_destination = $_POST['form_data'][0]['destination_zip'];
-    $tracking_weight = $_POST['form_data'][0]['total_weight'];
-    $tracking_packages = $_POST['form_data'][0]['number_of_packages'];
-    $tracking_email = $_POST['form_data'][0]['email'];
-    
-    if ($tracking_origin == "" || $tracking_destination == "" || $tracking_email == "") {
-        echo "There was problem while sending E-Mail. Please verify entered data and try again!";
-        exit();
-    }
-    
-    $message = "Origin ZIP: " . $tracking_origin . "\r\n"
-            . "Destination ZIP: " . $tracking_destination . "\r\n"
-            . "Total weight: " . $tracking_weight . "\r\n"
-            . "Number of packages: " . $tracking_packages . "\r\n"
-            . "Email: " . $tracking_email . "\r\n"; 
-}
-
-$headers = 'From: ' . $name . '<' . $email . ">\r\n" .
+$headers = 'From: ' . $nombre . '<' . $email . ">\r\n" .
         'Reply-To: ' . $email . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-if (mail($sendTo, $subject, $message, $headers)) {
-    echo "Message sent succesfully.";
+if (mail($sendTo, $asunto, $mensaje, $headers)) {
+    echo "Mensaje enviado.";
+exit;
 } else {
-    echo "There was problem while sending E-Mail.";
+    echo "Hubo unproblema con el E-Mail.";
 }
 ?>

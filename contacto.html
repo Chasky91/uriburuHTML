@@ -122,13 +122,13 @@
                         <br />
 
                         <!-- .contact form start -->
-                        <form class="wpcf7 clearfix">
+                        <form class="wpcf7 clearfix" action="contact.php" method="post" >
                             <fieldset>
                                 <label>
                                     <span class="required">*</span> Tú consulta:
                                 </label>
 
-                                <select class="wpcf7-form-control-wrap wpcf7-select" id="contact-inquiry">
+                                <select class="wpcf7-form-control-wrap wpcf7-select" name="tipo_de_consulta">
                                     <option value="PREDIOS">PREDIOS</option>
                                     <option value="TRAILERS">TRAILERS</option>
                                     <option value="CAÑOS TUBING">CAÑOS TUBING</option>
@@ -141,7 +141,7 @@
                                     <span class="required">*</span> Nombre:
                                 </label>
 
-                                <input type="text" class="wpcf7-text" id="contact-name">
+                                <input type="text" class="wpcf7-text" name="nombre">
                             </fieldset>
 
                             <fieldset>
@@ -149,7 +149,7 @@
                                     <span class="required">*</span> Apellido:
                                 </label>
 
-                                <input type="text" class="wpcf7-text" id="contact-last-name">
+                                <input type="text" class="wpcf7-text" name="apellido">
                             </fieldset>
 
                             <fieldset>
@@ -157,7 +157,7 @@
                                     <span class="required">*</span> Correo electronico:
                                 </label>
 
-                                <input type="url" class="wpcf7-text" id="contact-email">
+                                <input type="email" class="wpcf7-text" name="correo">
                             </fieldset>
 
                             <fieldset>
@@ -165,7 +165,7 @@
                                     <span class="required">*</span> Mensaje:
                                 </label>
 
-                                <textarea rows="8" class="wpcf7-textarea" id="contact-message"></textarea>
+                                <textarea rows="8" class="wpcf7-textarea" name="mensaje"></textarea>
                             </fieldset>
 
                             <input type="submit" class="wpcf7-submit" value="enviar" />
@@ -217,7 +217,7 @@
         
                                 <br />
         
-                                <form class="newsletter">
+                                <form class="newsletter" action="contact.php" method="POST">
                                     <input class="email" type="email" placeholder="tú email...">
                                     <input type="submit" class="submit" value="">
                                 </form>
