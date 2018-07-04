@@ -1,5 +1,9 @@
 <?php
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
+require 'src/Exception.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
 /*
  * Script for sending E-Mail messages.
  * 
@@ -7,11 +11,10 @@
  * 
  */
 
-// please change this to your E-Mail address
-$sendTo = "david_c91@oulook.com";
- 
-//$action = $_POST['tipo_de_consulta'];
-//$action = $_POST['tipo_de_consulta'];
+$mail = new PHPMailer(true);  
+
+
+
 if (isset($_POST['tipo_de_consulta'])) {
     $tipoDeConsulta = $_POST['tipo_de_consulta'];
     $nombre = $_POST['nombre'];
@@ -24,13 +27,13 @@ if (isset($_POST['tipo_de_consulta'])) {
         echo "Oh no, ha ocurrido un error, prueba enviar tu emsaje de nuevo";
         exit();
     }
-    
-    $message = 'pregunta: ' . $tipoDeConsulta . "\r\n"
-                        . "Nombre: " . $nombre . "\r\n"
-                        . "Apellido: " . $apellido . "\r\n"
-                        . "Email: " . $email . "\r\n"
-                        . $asunto . "\r\n"
-                        . "Mensaje: " . $mensaje . "\r\n";
+
+    $message = 'pregunta: ' . $tipoDeConsulta . "<br>"
+                        . "Nombre: " . $nombre . "<br>"
+                        . "Apellido: " . $apellido . "<br>"
+                        . "Email: " . $email . "<br>"
+                        . $asunto . "<br>"
+                        . "Mensaje: " . $mensaje . "<br>";
 } else {
     
     $email = $_POST['form_data'][0]['Email'];
@@ -41,17 +44,37 @@ if (isset($_POST['tipo_de_consulta'])) {
         exit();
     }
     $asunto = 'subscripción';
-    $mensaje = 'Nueva subscripción para : ' . $email;
+    $message = 'Nueva subscripción para : ' . $email;
 } 
 
-$headers = 'From: ' . $nombre . '<' . $email . ">\r\n" .
-        'Reply-To: ' . $email . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+// codigo para envio del mail con PHPmailer<
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();
+    $mail->Host = 'aqui va el host del corre ej smtp-mail.outlook.com ';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'aqui va el correo';                 // SMTP username
+    $mail->Password = '';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;  
+    $mail->CharSet = 'UTF-8';                                  // TCP port to connect to
+    //Recipients
+    $mail->setFrom('correo desde donde se envia', 'sitio web');
+    $mail->addAddress('al coreo que llega', 'Correo web');     // Add a recipient
 
-if (mail($sendTo, $asunto, $mensaje, $headers)) {
-    echo "Mensaje enviado.";
-exit;
-} else {
-    echo "Hubo unproblema con el E-Mail.";
+
+    //Content
+    $mail->isHTML();                                  // Set email format to HTML
+    $mail->Subject = $asunto;
+    $mail->Body    = $message;
+    $mail->AltBody = 'Este es un mensaje desde la pagina';
+    $mail->setLanguage('es');
+
+    $mail->send();
+    echo 'Mensaje enviado.';
+} catch (Exception $e) {
+    echo 'Hubo unproblema con el E-Mail.', $mail->ErrorInfo;
 }
+
 ?>
